@@ -13,6 +13,10 @@ public class ProductService : IProductService
         this.userContext = userContext;
     }
 
+    /// <summary>
+    /// Gets featured products and applies discount over it
+    /// </summary>
+    /// <returns>list of discounted products</returns>
     public IEnumerable<DiscountedProduct> GetFeaturedProducts()
     {
         return from product in this.repository.GetFeaturedProducts()
